@@ -51,3 +51,46 @@ function calcularPreco(){
 
     document.getElementById("preco").value = precoTotal > 0 ? precoTotal : "";
 }
+
+function adicionarPedido(){
+    try{
+        const cliente = document.getElementById("cliente").value.trim();
+        const telefone = document.getElementById("telefone").value.trim();
+        const doce = document.getElementById("doce").value;
+        const bebida = document.getElementById("bebida").value;
+        const preco = parseFloat(document.getElementById("preco").value);
+
+        const pedido = new PedidoDTO(cliente, telefone, doce, bebida, preco);
+        pedido.validar();
+
+        pedidos.push(pedido);
+        atualizarLista();
+
+        document.getElementById("cliente").value = "";
+        document.getElementById("telefone").value = "";
+        document.getElementById("doce").selectedIndex = 0;
+        document.getElementById("bebida").selectedIndex = 0;
+        document.getElementById("preco").value = "";
+    }
+    catch (erro){
+        alert(erro.message);
+    }
+}
+function atualizarLista(){
+    const listaPedidos = document.getElementById("listaPedidos");
+    listaPedidos.innerHTML = "";
+
+    pedidos.forEach(p => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <strong> Cliente:</strong> ${p.cliente}<br>
+            <strong> Doce:</strong> ${p.doce}<br>
+            <strong> Bebida:</strong> ${p.bebida || 'Nenhuma'}<br>
+            <strong> Preço:</strong> R$ ${p.preco.toFixed(2)}<br>
+        `;
+        listaPedidos.appendChild(li);
+    });
+
+    const total = pedidos.reduce((soma, p) => soma + p.preco, 0);
+    document.getElementById("totalPedidos").innerText = "Total: R$ " + total.toFixed(2);
+}
