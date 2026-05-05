@@ -9,3 +9,139 @@
 html{
     font-family: "Montserrat", sans-serif;
 }
+
+body {
+    background: #f9fffb;
+    min-height: 100vh;
+    padding: 20px;
+    color: #da525d;
+
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #be185d;
+    background-clip: text;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(255, 154, 162, 0.3);
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.form_section {
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 182, 178, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.form_section h2 {
+    color: #be185d;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+input, select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #b984af;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #be185d;
+    box-shadow: 0 0 20px rgba(218, 82, 93, 0.2);
+    transform: translateY(-2px);
+}
+
+#preco {
+    background-color: #96d1aa; 
+    font-weight: bold;
+    color: #FFFFFF; 
+}
+
+button {
+    width: 100%;
+    padding: 18px;
+    background-color: #be185d; 
+    color: #FFFFFF;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 154, 162, 0.4);
+}
+
+button:hover {
+    background-color: #b984af;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 154, 162, 0.6);
+}
+
+.lista_section {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+    backdrop-filter: blur(10px);
+    height: fit-content;
+}
+
+.lista_section h2 {
+    color: #210611;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+#listaPedidos {
+    list-style: none;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+#listaPedidos li {
+    background-color: #96d1aa;
+    margin-bottom: 20px; 
+    padding: 25px;
+    border-radius: 18px;
+    border-left: 6px solid #be185d;
+    transition: all 0.3s ease;
+}
+
+#listaPedidos li strong {
+    color: #191919;
+}
+
+#totalPedidos {
+    background-color: #be185d;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-top: 25px;
+    box-shadow: 0 8px 25px rgba(185, 132, 175, 0.3);
+}
