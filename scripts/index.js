@@ -1,3 +1,4 @@
+// Ágatha de Souza
 class PedidoDTO{
     constructor(cliente, telefone, doce, bebida, preco){
         this.cliente = cliente;
